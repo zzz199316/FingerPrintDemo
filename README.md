@@ -18,4 +18,9 @@ public class MainActivity extends AppCompatActivity implements CheckFinger {
         startActivity(intent);
         finish();
     }
+    
+     @Override
+    public void onOtherAuthenticated() {
+        Toast.makeText(this, "请使用其他认证方式", Toast.LENGTH_SHORT).show();
+    }
 }
