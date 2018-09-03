@@ -1,6 +1,8 @@
 # FingerPrintDemo
 
 1.添加依赖
+
+	
 	allprojects {
 		repositories {
 			...
@@ -21,17 +23,13 @@ public class MainActivity extends AppCompatActivity implements CheckFinger {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         new  FingerprintUtils().check(this);
-
-
     }
-
     @Override
     public void onAuthenticated() {
         Intent intent = new Intent(this, Main2Activity.class);
         startActivity(intent);
         finish();
     }
-    
      @Override
     public void onOtherAuthenticated() {
         Toast.makeText(this, "请使用其他认证方式", Toast.LENGTH_SHORT).show();
