@@ -8,4 +8,5 @@ package com.plgf.fingerprint;
 
 public interface CheckFinger {
     void onAuthenticated();
+    void onOtherAuthenticated();
 }

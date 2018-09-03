@@ -30,13 +30,15 @@ public class FingerprintUtils {
     private static final String DEFAULT_KEY_NAME = "default_key";
 
     KeyStore keyStore;
+    private CheckFinger checkFinger;
 
     public  void check(Activity activity){
+        checkFinger = (CheckFinger) activity;
         if (supportFingerprint(activity)) {
             initKey();
             initCipher(activity);
         }else {
-
+            checkFinger.onOtherAuthenticated();
         }
     }
 
